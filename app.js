@@ -1,8 +1,10 @@
 const Koa = require('koa');
+const json = require('koa-json')
+const router = require('./routes').router;
 const app = new Koa();
 
-app.use(async ctx => {
-  ctx.body = 'Hello World';
-});
+app.use(json())
 
-app.listen(80);
+app.use(router.routes());
+
+app.listen(process.env.PORT || 3000);
