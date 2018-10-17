@@ -12,7 +12,7 @@ begin
                    killall node;
                    git pull;
                    npm install;
-                   PORT=80 node app.js > foo.out 2> foo.err < /dev/null &")
+                   PORT=80 node app.js > logs/foo.out 2> logs/foo.err < /dev/null &")
   puts res
   ssh.close
 rescue Exception => e
